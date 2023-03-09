@@ -1,4 +1,4 @@
-ARG HYPERIONVER=2.0.14
+ARG HYPERIONVER=2.0.15
 ARG DEBVER=bullseye
 
 FROM debian:${DEBVER}-slim
@@ -15,7 +15,8 @@ RUN apt-get update && apt-get install -y \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
-EXPOSE 8090 8091
+# Dashboard, JSON Server, Protocol Buffers Server
+EXPOSE 8090 19444 19445
 
 ENTRYPOINT ["/usr/bin/hyperiond"]
 CMD ["--verbose"]
