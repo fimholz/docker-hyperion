@@ -3,13 +3,11 @@ https://github.com/hyperion-project/hyperion.ng
 
 ## build example
 
-```docker build -t fimholz/hyperion.ng:latest -t fimholz/hyperion.ng:2.0.14 .```
+```docker buildx build -t fimholz/hyperion.ng:latest -t fimholz/hyperion.ng:2.0.16 .```
 
 ## docker compose example
 
 ```
-version: "3.8"
-
 x-images:
   - &image "fimholz/hyperion.ng:latest"
     
