@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y \
  && echo "deb [signed-by=/usr/share/keyrings/hyperion.pub.gpg] https://apt.releases.hyperion-project.org/ "$DEBVER" main" | tee /etc/apt/sources.list.d/hyperion.list \
  && apt-get update && apt-get install -y \
     hyperion="$HYPERIONVER"~"$DEBVER" \
+    libpython3.11 \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
